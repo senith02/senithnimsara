@@ -17,7 +17,7 @@ const MobileMenu = ({menuOpen, setMenuOpen}) => {
       </button>
 
       <a href='#home' 
-          className={`text-1xl font-semibold text-white my-8 transform transition-transform duration-300
+          className={`text-1xl font-semibold text-white my-4 transform transition-transform duration-300
             ${
               menuOpen ? 'opacity-100 translate-y-0'
               :'opacity-0 translate-y-5'
@@ -25,7 +25,7 @@ const MobileMenu = ({menuOpen, setMenuOpen}) => {
                 Home
       </a>
       <a href='#about' 
-          className={`text-1xl font-semibold text-white my-8 transform transition-transform duration-300
+          className={`text-1xl font-semibold text-white my-4 transform transition-transform duration-300
             ${
               menuOpen ? 'opacity-100 translate-y-0'
                :'opacity-0 translate-y-5'
@@ -33,7 +33,7 @@ const MobileMenu = ({menuOpen, setMenuOpen}) => {
                About
        </a>              
         <a href='#projects' 
-          className={`text-1xl font-semibold text-white my-8 transform transition-transform duration-300
+          className={`text-1xl font-semibold text-white my-4 transform transition-transform duration-300
             ${
               menuOpen ? 'opacity-100 translate-y-0'
                 :'opacity-0 translate-y-5'
@@ -41,7 +41,7 @@ const MobileMenu = ({menuOpen, setMenuOpen}) => {
                  Projects
          </a>
           <a href='#contact' 
-            className={`text-1xl font-semibold text-white my-8 transform transition-transform duration-300
+            className={`text-1xl font-semibold text-white my-4 transform transition-transform duration-300
                ${
                 menuOpen ? 'opacity-100 translate-y-0'
                 :'opacity-0 translate-y-5'
