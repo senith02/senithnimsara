@@ -4,9 +4,9 @@ import LoadingScreen from './components/LoadingScreen'
 import "./index.css"
 import Navbar from './components/Navbar';
 import MobileMenu from './components/MobileMenu';
-import Home from './components/Home';
-import About from './components/About';
-import Projects from './components/Projects';
+import Home from './components/sections/Home';
+import About from './components/sections/About';
+import Projects from './components/sections/Projects';
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
