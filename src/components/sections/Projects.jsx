@@ -9,12 +9,6 @@ import ReviewOnScroll from '../ReviewOnScroll';
 const Projects = () => {
   const projectData = [
     {
-      title: 'Image Editor Software',
-      description: 'Developed an image editor with OpenCV and Tkinter, featuring face detection, censorship, and image enhancements.',
-      techStack: ['OpenCV', 'Python', 'Tkinter'],
-      images: ['/images/imageEditor1.png', '/images/imageEditor2.png'],
-    },
-    {
       title: 'Bus Booking App',
       description: 'Working on a bus booking app with a Google Map UI integration for location-based services and route visualization.',
       techStack: ['Java', 'Google Maps API', 'sqllite','Android Studio'],
@@ -34,6 +28,18 @@ const Projects = () => {
         'https://i.ibb.co/67Ztp3vz/ss3.png',
         'https://i.ibb.co/Ld1dcGV4/ss4.png'
       ],
+    },
+    {
+      title: 'Image Editor Software',
+      description: 'Developed an image editor with OpenCV and Tkinter, featuring face detection, censorship, and image enhancements.',
+      techStack: ['OpenCV', 'Python', 'Tkinter'],
+      images: ['/images/imageEditor1.png', '/images/imageEditor2.png'],
+    },
+    {
+      title: 'Text Editor App',
+      description: 'Created a text editor app with advanced features like back functionality using Queue and Stack data structures, and word sorting using sorting algorithms.',
+      techStack: ['Java', 'Data Structures', 'Algorithms'],
+      images: ['/images/textEditor1.png', '/images/textEditor2.png'],
     },
   ];
 
