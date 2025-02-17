@@ -9,9 +9,12 @@ const Home = () => {
             <h1 className='text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-right'>
                 Hi, I'm Senith Nimsara
             </h1>
-            <p className='text-grey-400 text-lg mb-8 max-w-lg mx-auto'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                Maxime ipsa quia deleniti aspernatur a expedita eveniet quas. 
-                Dolore vel omnis consequatur voluptatibus nam ex eveniet porro illo ut. Doloremque, autem?</p>
+            <p className='text-grey-400 text-lg mb-8 max-w-lg mx-auto'>I'm a passionate full-stack developer and freelancer 
+              with a keen eye for building dynamic, user-friendly web and mobile applications. 
+              With expertise in both front-end and back-end technologies, 
+              I create seamless digital experiences that blend functionality 
+              with modern design. I thrive on solving complex problems, optimizing performance, 
+              and delivering high-quality software solutions that make an impact.</p>
             <div className='flex justify-center space-x-4'>
                 <a href='#projects' className='bg-blue-500 text-white py-3 px-6 rounded 
                 font-medium trainsition-relative 
