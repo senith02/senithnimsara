@@ -6,31 +6,44 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import ReviewOnScroll from '../ReviewOnScroll';
 
+// Import images
+// import imageEditor1 from '../../assets/images/imageEditor/imageEditor1.png';
+// import imageEditor2 from '../../assets/images/imageEditor/imageEditor2.png';
+import bus1 from '../../assets/images/Bus/bus1.png';
+import bus2 from '../../assets/images/Bus/bus2.png';
+import bus3 from '../../assets/images/Bus/bus3.png';
+import ss1 from '../../assets/images/SS project/ss1.png';
+import ss2 from '../../assets/images/SS project/ss2.png';
+import ss3 from '../../assets/images/SS project/ss3.png';
+import ss4 from '../../assets/images/SS project/ss4.png';
+// import textEditor1 from '../../assets/images/textEditor/textEditor1.png';
+// import textEditor2 from '../../assets/images/textEditor/textEditor2.png';
+
 const Projects = () => {
   const projectData = [
     {
       title: 'Image Editor Software',
       description: 'Developed an image editor with OpenCV and Tkinter, featuring face detection, censorship, and image enhancements.',
       techStack: ['OpenCV', 'Python', 'Tkinter'],
-      images: ['/images/imageEditor1.png', '/images/imageEditor2.png'],
+      images: ['imageEditor1.png', 'imageEditor2.png'],
     },
     {
       title: 'Bus Booking App',
       description: 'Working on a bus booking app with a Google Map UI integration for location-based services and route visualization.',
       techStack: ['Java', 'Google Maps API', 'sqllite','Android Studio'],
-      images: ['src/assets/images/Bus/bus1.png', 'src/assets/images/Bus/bus2.png','src/assets/images/Bus/bus3.png'],
+      images: [bus1, bus2, bus3],
     },
     {
       title: 'Social Media App',
       description: 'A social media app built with security features for user authentication and data protection, developed as part of a software security project.',
-      techStack: ['React', 'Node.js', 'MongoDB'],
-      images: ['src/assets/images/SS%20project/ss1.png', 'src/assets/images/SS%20project/ss2.png','src/assets/images/SS%20project/ss3.png','src/assets/images/SS%20project/ss4.png'],
+      techStack: ['React', 'Node.js', 'Firebase'],
+      images: [ss1, ss2, ss3, ss4],
     },
     {
       title: 'Text Editor App',
       description: 'Created a text editor app with advanced features like back functionality using Queue and Stack data structures, and word sorting using sorting algorithms.',
       techStack: ['Java', 'Data Structures', 'Algorithms'],
-      images: ['/images/textEditor1.png', '/images/textEditor2.png'],
+      images: ['textEditor1.png', 'textEditor2.png'],
     },
   ];
 
