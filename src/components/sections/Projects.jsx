@@ -1,91 +1,87 @@
-import React from 'react'
-import ReviewOnScroll from '../ReviewOnScroll'
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import ReviewOnScroll from '../ReviewOnScroll';
 
 const Projects = () => {
+  const projectData = [
+    {
+      title: 'Image Editor Software',
+      description: 'Developed an image editor with OpenCV and Tkinter, featuring face detection, censorship, and image enhancements.',
+      techStack: ['OpenCV', 'Python', 'Tkinter'],
+      images: ['/images/imageEditor1.png', '/images/imageEditor2.png'],
+    },
+    {
+      title: 'Bus Booking App',
+      description: 'Working on a bus booking app with a Google Map UI integration for location-based services and route visualization.',
+      techStack: ['Java', 'Google Maps API', 'sqllite','Android Studio'],
+      images: ['src/assets/images/Bus/bus1.png', 'src/assets/images/Bus/bus2.png','src/assets/images/Bus/bus3.png'],
+    },
+    {
+      title: 'Social Media App',
+      description: 'A social media app built with security features for user authentication and data protection, developed as part of a software security project.',
+      techStack: ['React', 'Node.js', 'MongoDB'],
+      images: ['src/assets/images/SS%20project/ss1.png', 'src/assets/images/SS%20project/ss2.png','src/assets/images/SS%20project/ss3.png','src/assets/images/SS%20project/ss4.png'],
+    },
+    {
+      title: 'Text Editor App',
+      description: 'Created a text editor app with advanced features like back functionality using Queue and Stack data structures, and word sorting using sorting algorithms.',
+      techStack: ['Java', 'Data Structures', 'Algorithms'],
+      images: ['/images/textEditor1.png', '/images/textEditor2.png'],
+    },
+  ];
+
   return (
-    <section id='projects' className='min-h-screen flex items-center justify-center py-20'>
-       <ReviewOnScroll>
-        <div className='max-w-5xl mx-auto px-4'>
-        <h2 className='text-3xl font-bold mb-8 bg-gradient-to-r 
-                        from-blue-500 to-cyan-400 bg-clip-text 
-                        text-transparent text-center'>
-                                {" "}
-                                Projects
+    <section id="projects" className="min-h-screen py-20 px-4">
+      <ReviewOnScroll>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold mb-12 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
+            My Projects
           </h2>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-            <div className='p-6 rounded-xl border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition'>
-              <h3 className='text-xl font-bold mb-2'>Hotel Mangement System</h3>
-              <p className='text-gray-400 mb-4'>Developed a Hotel Booking System using a microservices architecture for managing hotel information,
-                bookings, user reviews, and user profiles. Integrated Eureka for service discovery and Spring Cloud Gateway
-                for centralized API routing.</p>
-                <div className='flex flex-wrap gap-2 mb-4'>
-                  {["React","Node.js","SpringBoot","Mysql","Java"].map((tech, key) => (
-                  <span key={key} className='bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm 
-                  hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all'>
-                          {tech}
-                  </span>
-                ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projectData.map((project, index) => (
+              <div key={index} className="p-6 rounded-xl border border-white/10 bg-blue-500/5 backdrop-blur-sm 
+              hover:-translate-y-1 transition-all duration-300 
+              hover:shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+                <div className="relative aspect-video mb-4 rounded-lg overflow-hidden">
+                  <Swiper
+                    modules={[Navigation, Pagination, Autoplay]}
+                    navigation
+                    pagination={{ clickable: true }}
+                    autoplay={{ delay: 3000, disableOnInteraction: false }}
+                    loop={true}
+                    className="w-full h-full"
+                  >
+                    {project.images.map((img, imgIndex) => (
+                      <SwiperSlide key={imgIndex}>
+                        <img 
+                          src={img} 
+                          alt={`${project.title} ${imgIndex + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
                 </div>
-                <div className='flex justify-between items-center'>
-                  <a href='#' className='text-blue-400 hover:text-blue-300 transition-colors my-4'> View Project</a>
+                <h3 className="text-xl font-bold mb-2 text-white/90">{project.title}</h3>
+                <p className="text-gray-400 text-sm mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.techStack.map((tech, techIndex) => (
+                    <span key={techIndex} className="bg-blue-500/10 text-blue-400 text-xs px-3 py-1 rounded-full">
+                      {tech}
+                    </span>
+                  ))}
                 </div>
-            </div>
-            <div className='p-6 rounded-xl border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition'>
-              <h3 className='text-xl font-bold mb-2'>Hotel Mangement System</h3>
-              <p className='text-gray-400 mb-4'>Developed a Hotel Booking System using a microservices architecture for managing hotel information,
-                bookings, user reviews, and user profiles. Integrated Eureka for service discovery and Spring Cloud Gateway
-                for centralized API routing.</p>
-                <div className='flex flex-wrap gap-2 mb-4'>
-                  {["React","Node.js","SpringBoot","Mysql","Java"].map((tech, key) => (
-                  <span key={key} className='bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm 
-                  hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all'>
-                          {tech}
-                  </span>
-                ))}
-                </div>
-                <div className='flex justify-between items-center'>
-                  <a href='#' className='text-blue-400 hover:text-blue-300 transition-colors my-4'> View Project</a>
-                </div>
-            </div>
-            <div className='p-6 rounded-xl border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition'>
-              <h3 className='text-xl font-bold mb-2'>Hotel Mangement System</h3>
-              <p className='text-gray-400 mb-4'>Developed a Hotel Booking System using a microservices architecture for managing hotel information,
-                bookings, user reviews, and user profiles. Integrated Eureka for service discovery and Spring Cloud Gateway
-                for centralized API routing.</p>
-                <div className='flex flex-wrap gap-2 mb-4'>
-                  {["React","Node.js","SpringBoot","Mysql","Java"].map((tech, key) => (
-                  <span key={key} className='bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm 
-                  hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all'>
-                          {tech}
-                  </span>
-                ))}
-                </div>
-                <div className='flex justify-between items-center'>
-                  <a href='#' className='text-blue-400 hover:text-blue-300 transition-colors my-4'> View Project</a>
-                </div>
-            </div>
-            <div className='p-6 rounded-xl border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition'>
-              <h3 className='text-xl font-bold mb-2'>Hotel Mangement System</h3>
-              <p className='text-gray-400 mb-4'>Developed a Hotel Booking System using a microservices architecture for managing hotel information,
-                bookings, user reviews, and user profiles. Integrated Eureka for service discovery and Spring Cloud Gateway
-                for centralized API routing.</p>
-                <div className='flex flex-wrap gap-2 mb-4'>
-                  {["React","Node.js","SpringBoot","Mysql","Java"].map((tech, key) => (
-                  <span key={key} className='bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm 
-                  hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all'>
-                          {tech}
-                  </span>
-                ))}
-                </div>
-                <div className='flex justify-between items-center'>
-                  <a href='#' className='text-blue-400 hover:text-blue-300 transition-colors my-4'> View Project</a>
-                </div>
-            </div>
+              </div>
+            ))}
           </div>
         </div>
-        </ReviewOnScroll> 
+      </ReviewOnScroll>
     </section>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
