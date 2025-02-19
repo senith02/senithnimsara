@@ -12,16 +12,20 @@ const Projects = () => {
       title: 'Bus Booking App',
       description: 'Working on a bus booking app with a Google Map UI integration for location-based services and route visualization.',
       techStack: ['Java', 'Google Maps API', 'sqllite','Android Studio'],
+      imageType: 'phone', // Add imageType property
       images: [
-        'https://i.ibb.co/Z6yWZRBP/bus1.png',
-        'https://i.ibb.co/nMNzNKm5/bus2.png',
-        'https://i.ibb.co/4n0THVyh/bus3.png'
+        'https://i.ibb.co/bgnsFS59/IMG-20250219-WA0005.jpg',
+        'https://i.ibb.co/DH8b3vfY/IMG-20250219-WA0006.jpg',
+        'https://i.ibb.co/1fcS2Y86/Whats-App-Image-2025-02-19-at-10-54-01-425fe1c3.jpg',
+        'https://i.ibb.co/20r7FWGH/IMG-20250219-WA0003.jpg',
+        'https://i.ibb.co/n8t6VQGN/IMG-20250219-WA0004.jpg'
       ],
     },
     {
       title: 'Social Media App',
       description: 'A social media app built with security features for user authentication and data protection, developed as part of a software security project.',
       techStack: ['React', 'Node.js', 'Firebase'],
+      imageType: 'desktop', // Add imageType property
       images: [
         'https://i.ibb.co/YBk8kTvK/ss1.png',
         'https://i.ibb.co/wFDwpk61/ss2.png',
@@ -55,7 +59,11 @@ const Projects = () => {
               <div key={index} className="p-6 rounded-xl border border-white/10 bg-blue-500/5 backdrop-blur-sm 
               hover:-translate-y-1 transition-all duration-300 
               hover:shadow-[0_0_15px_rgba(59,130,246,0.2)]">
-                <div className="relative aspect-video mb-4 rounded-lg overflow-hidden">
+                <div className={`relative mb-4 rounded-lg overflow-hidden ${
+                  project.imageType === 'phone' 
+                    ? 'h-[400px] md:h-[450px]' // Height for phone screenshots
+                    : 'aspect-video' // Default aspect ratio for desktop
+                }`}>
                   <Swiper
                     modules={[Navigation, Pagination, Autoplay]}
                     navigation
@@ -65,12 +73,18 @@ const Projects = () => {
                     className="w-full h-full"
                   >
                     {project.images.map((img, imgIndex) => (
-                      <SwiperSlide key={imgIndex}>
-                        <img 
-                          src={img} 
-                          alt={`${project.title} ${imgIndex + 1}`}
-                          className="w-full h-full object-cover"
-                        />
+                      <SwiperSlide key={imgIndex} className="flex items-center justify-center bg-gray-900">
+                        <div className="flex items-center justify-center w-full h-full">
+                          <img 
+                            src={img} 
+                            alt={`${project.title} ${imgIndex + 1}`}
+                            className={`${
+                              project.imageType === 'phone'
+                                ? 'h-full w-auto max-w-none object-contain mx-auto' // Added mx-auto for centering
+                                : 'w-full h-full object-cover'
+                            }`}
+                          />
+                        </div>
                       </SwiperSlide>
                     ))}
                   </Swiper>
